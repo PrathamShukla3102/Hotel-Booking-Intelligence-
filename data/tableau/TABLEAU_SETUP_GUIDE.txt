@@ -1,0 +1,86 @@
+
+================================================================================
+TABLEAU DASHBOARD FILTERS GUIDE
+================================================================================
+
+RECOMMENDED GLOBAL FILTERS (Apply to all dashboards):
+------------------------------------------------------
+1. Date Range Filter
+   - Field: arrival_date
+   - Type: Date Range
+   - Default: Last 12 months
+
+2. Hotel Type Filter
+   - Field: hotel
+   - Type: Multi-select dropdown
+   - Default: All
+
+3. Booking Status Filter
+   - Field: booking_status
+   - Type: Multi-select dropdown
+   - Options: Completed, Canceled
+   - Default: All
+
+DASHBOARD-SPECIFIC FILTERS:
+---------------------------
+
+Executive Summary Dashboard:
+- Year-Month (year_month)
+- Customer Type (customer_type)
+
+Cancellation Analytics Dashboard:
+- Risk Level (risk_level)
+- Lead Time Category (lead_time_category)
+- Deposit Type (deposit_status)
+
+Revenue Optimization Dashboard:
+- Price Segment (price_segment)
+- Market Segment (market_segment)
+- Guest Category (guest_category)
+
+Predictive Insights Dashboard:
+- Risk Level (risk_level)
+- Prediction Accuracy (prediction_correct)
+
+================================================================================
+RECOMMENDED PARAMETERS:
+================================================================================
+
+1. Target Cancellation Rate
+   - Data Type: Float
+   - Default: 0.37
+   - Use: Benchmark line in charts
+
+2. Target ADR
+   - Data Type: Float
+   - Default: 100
+   - Use: Revenue target line
+
+3. Risk Threshold
+   - Data Type: Float
+   - Default: 0.70
+   - Use: Flag high-risk bookings
+
+================================================================================
+CALCULATED FIELDS TO CREATE IN TABLEAU:
+================================================================================
+
+1. Cancellation Rate (%)
+   Formula: SUM([is_canceled]) / COUNT([is_canceled]) * 100
+
+2. Average Revenue per Booking
+   Formula: SUM([total_revenue]) / COUNT([booking_id])
+
+3. Occupancy Rate (%)
+   Formula: COUNT([is_canceled]=0) / COUNT([booking_id]) * 100
+
+4. Revenue at Risk
+   Formula: IF [risk_level] = "High Risk" OR [risk_level] = "Very High Risk"
+            THEN [total_revenue] ELSE 0 END
+
+5. Month-over-Month Growth (%)
+   Formula: (SUM([total_bookings]) - LOOKUP(SUM([total_bookings]), -1)) / 
+            LOOKUP(SUM([total_bookings]), -1) * 100
+
+================================================================================
+        

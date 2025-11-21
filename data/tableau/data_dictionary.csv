@@ -1,0 +1,15 @@
+Field Name,Data Type,Description,Example Values
+hotel,String,Type of hotel,"City Hotel, Resort Hotel"
+arrival_date,Date,Date of arrival,2024-07-15
+booking_status,String,Booking outcome,"Completed, Canceled"
+lead_time,Number,Days between booking and arrival,120
+adr,Number,Average Daily Rate in USD,95.50
+total_revenue,Number,Total booking revenue (ADR × nights),477.50
+total_nights,Number,Total nights stayed,5
+total_guests,Number,Total number of guests,2
+guest_category,String,Type of guests,"Solo, Couple, Family, Group"
+market_segment,String,Booking channel,"Online TA, Direct, Corporate"
+season,String,Season of arrival,"Winter, Spring, Summer, Fall"
+price_segment,String,Price category,"Budget, Mid-Range, Premium, Luxury"
+risk_level,String,ML predicted risk,"Low, Medium, High, Very High"
+cancellation_probability,Number,Probability of cancellation,0.75
