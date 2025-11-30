@@ -62,11 +62,8 @@ All preprocessing is done through `HotelDataPreprocessor`.
 5. **Save Cleaned Data**  
 data/processed/hotel_bookings_clean.csv
 
-6. **Full Preprocessing Pipeline Run**  
 
-```python
-df_clean = preprocessor.run_full_pipeline()
-##  **4.Exploratory Data Analysis (EDA)**
+## **4. Exploratory Data Analysis (EDA)**
 
 Exploratory Data Analysis is performed after preprocessing to understand booking trends, pricing patterns, and cancellation behavior.  
 All EDA visualizations are automatically generated and saved in:
@@ -296,7 +293,7 @@ metadata.json
 
 ## 14. Run the Full Pipeline
 
-```python
+
 from src.hotel_cancellation_model import HotelCancellationModel
 
 pipeline = HotelCancellationModel(
@@ -304,6 +301,7 @@ pipeline = HotelCancellationModel(
 )
 
 pipeline.run_full_pipeline()
+
 This executes:
 
 --Data loading
